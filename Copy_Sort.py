@@ -20,3 +20,5 @@ print('Array :', array)
 
 print('Copy :', copy_sort(array))
 print('Array :', array)
+
+# Test to see if it worked
