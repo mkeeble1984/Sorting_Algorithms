@@ -1,3 +1,6 @@
+import os
+
+
 def copy_sort(array):
     # creates a copy of the original array called 'copy'
     copy = array[:]
@@ -19,15 +22,24 @@ def copy_sort(array):
     return sorted_copy
 
 
-# Adds data into the array
-array = [5, 3, 1, 2, 6, 4]
+# Create a blank array
+array = []
+new_input = 0
 
-# Displays on the screen Title and original array
+# Displays on the screen title and original array
+os.system('cls')
 print('Copy Sort...')
-print('Array :', array)
+
+while new_input != 'X':  # User inputs random number which, if not X, will be added into the array
+    new_input = input(
+        '\nEnter a random number less than 10 (X when done): ').upper()
+    if new_input != 'X':
+        array.append(new_input)
+
+    print(array)
+
+print('\n Array :', array)
 
 # Runs the function 'copy_sort' using original array
-print('Copy :', copy_sort(array))
-print('Array :', array)
-
-# Test to see if it worked
+print('\nIn ascending order :', copy_sort(array))
+print('\nOriginal Array :', array)
