@@ -7,12 +7,15 @@ def copy_sort(array):
     # while there are elements in the array 'copy'
     while len(copy) > 0:
         minimum = 0
-        for element in range(0, len(copy)):
-            if copy[element] < copy[minimum]:  # NEED TO UNDERSTAND WHAT IS HAPPENEING HERE
-                minimum = element
+        for item in range(0, len(copy)):  # repeat loop until it reaches the end of the array
+            # 1st loop irrelevant as 1st item is not < 1st item. 2nd loop has 2nd item < mimimum, so becomes new minimum. 3rd loop has 3rd item < than mimimum, so becomes the new minimum. 4th loop - 4th item is not < than minimum, 5th loop item is also not < minimum, 6th loop is also not < than minimum. Minimum number in this array has been found.
+            if copy[item] < copy[minimum]:
+                minimum = item
+        # prints the item to be removed (minimum number in the current array) and the full current array.
         print('\tRemoving', copy[minimum], 'from', copy)
+        # removes the minimum number from the current array and adds it into the sorted_copy array.
         sorted_copy.append(copy.pop(minimum))
-
+    # while loop repeats, selecting the minimum number left in the 'copy' array and adding it to the end of the 'sorted_array' until 'copy' is empty.
     return sorted_copy
 
 
